@@ -7,7 +7,7 @@ tags: &tags
   atomi.cloud/cluster: *cluster
 
 clusterName: &clusterName "entei-onyx"
-nodeRole: "arn:aws:iam::767398020544:role/Karpenter-entei-onyx-20240213070317900300000004"
+nodeRole: "arn:aws:iam::767398020544:role/Karpenter-entei-onyx-20240215061542901500000007"
 
 karpenter:
   settings:
@@ -23,7 +23,7 @@ karpenter:
     <<: *tags
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: arn:aws:iam::767398020544:role/KarpenterController-2024021307122303800000001b
+      eks.amazonaws.com/role-arn: arn:aws:iam::767398020544:role/KarpenterController-2024021506251630280000001e
       <<: *tags
     labels:
       <<: *tags
