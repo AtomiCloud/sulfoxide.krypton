@@ -37,10 +37,10 @@ karpenter:
     resources:
       limits:
         cpu: 250m
-        memory: 1Gi
+        memory: 0.5Gi
       requests:
-        cpu: 100m
-        memory: 512Mi
+        cpu: 250m
+        memory: 0.5Gi
   topologySpreadConstraints:
     - maxSkew: 1
       topologyKey: topology.kubernetes.io/zone
