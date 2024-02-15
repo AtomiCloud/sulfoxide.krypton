@@ -1,0 +1,45 @@
+serviceTree:
+  landscape: &landscape entei
+  cluster: &cluster onyx
+
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+
+clusterName: &clusterName "entei-onyx"
+nodeRole: "arn:aws:iam::767398020544:role/Karpenter-entei-onyx-20240213070317900300000004"
+
+karpenter:
+  settings:
+    clusterName: *clusterName
+    interruptionQueueName: *clusterName
+  additionalAnnotations:
+    <<: *tags
+  podLabels:
+    <<: *tags
+  additionalLabels:
+    <<: *tags
+  podAnnotations:
+    <<: *tags
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::767398020544:role/KarpenterController-2024021307122303800000001b
+      <<: *tags
+    labels:
+      <<: *tags
+
+al2:
+  enable: false
+
+bottlerocket:
+  enable: true
+  requirements:
+    - key: "karpenter.k8s.aws/instance-category"
+      operator: In
+      values: [ "t" ]
+    - key: "karpenter.k8s.aws/instance-generation"
+      operator: Gt
+      values: [ "2" ]
+    - key: "karpenter.k8s.aws/instance-cpu"
+      operator: Gt
+      values: [ "2" ]

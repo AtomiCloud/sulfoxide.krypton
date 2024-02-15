@@ -1,0 +1,37 @@
+version: "3"
+
+env:
+  RELEASE_NAME: sulfoxide-krypton
+
+includes:
+  util: tasks/Taskfile.util.yaml
+  entei:onyx:
+    taskfile: tasks/Taskfile.cluster.yaml
+    vars:
+      LANDSCAPE: entei
+      CLUSTER: onyx
+
+tasks:
+  # Utility
+  start:cluster:
+    desc: Starts the playground cluster to test helm charts
+    cmds:
+      - ./scripts/local/create-k3d-cluster.sh
+
+  stop:cluster:
+    desc: Destroys the playground cluster to test helm charts
+    cmds:
+      - ./scripts/local/delete-k3d-cluster.sh
+
+  # Helm Operations
+  update:
+    desc: Update Helm dependencies
+    dir: chart
+    cmds:
+      - helm dependency update
+
+  latest:
+    desc: Get the latest version of Cert Manager
+    cmds:
+      - >-
+        echo "karpenter: $(skopeo list-tags docker://public.ecr.aws/karpenter/karpenter | jq -r '.Tags[]' | sort -V | tail -n 1)"

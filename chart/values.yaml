@@ -1,0 +1,104 @@
+# -- AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb)
+serviceTree:
+  platform: &platform sulfoxide
+  service: &service krypton
+  layer: &layer "1"
+
+# -- Kubernetes labels and annotations, following Service Tree
+tags: &tags
+  atomi.cloud/platform: *platform
+  atomi.cloud/service: *service
+  atomi.cloud/layer: *layer
+
+# -- Name of the cluster karpenter is deployed to
+clusterName: name
+# -- Name of the node role that each node has to assume
+nodeRole: karpenter-role
+
+# -- Karpenter configuration. See [Karpenter Helm Chart](https://github.com/aws/karpenter-provider-aws/tree/main/charts/karpenter)
+karpenter:
+  serviceMonitor:
+    enabled: true
+  settings:
+    clusterName:
+    interruptionQueueName:
+  additionalAnnotations:
+    <<: *tags
+  podLabels:
+    <<: *tags
+    atomi.cloud/module: "karpenter"
+  additionalLabels:
+    <<: *tags
+  podAnnotations:
+    <<: *tags
+    atomi.cloud/module: "karpenter"
+  controller:
+
+    resources:
+      limits:
+        cpu: 250m
+        memory: 1Gi
+      requests:
+        cpu: 100m
+        memory: 512Mi
+  topologySpreadConstraints:
+    - maxSkew: 1
+      topologyKey: topology.kubernetes.io/zone
+      whenUnsatisfiable: ScheduleAnyway
+      labelSelector:
+        matchLabels:
+          <<: *tags
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: ""
+    labels:
+      <<: *tags
+
+
+# -- Values to control Amazon Linux 2 (AL2) provisioners
+al2:
+  # -- Enable the AL2 Provisioner
+  enable: false
+  # -- Requirement for the AL2 provisioner
+  requirements: [ ]
+  # -- Total limits that the provisioner can provision
+  limits:
+    # -- Maximum CPU that the provisioner can provision
+    cpu: 50
+    # -- Maximum memory that the provisioner can provision
+    memory: 100Gi
+  # -- Control how the provisioner handles disruptions
+  disruption:
+    # -- Consolidation policy to use
+    consolidationPolicy: "WhenUnderutilized" # or WhenEmpty
+    # -- Time to wait before consolidating resources
+    consolidateAfter: 30s
+    # -- Time to wait before expiring resources (will automatically restart nodes periodically)
+    expireAfter: 720h
+    # -- Budgets to use for consolidating resources
+    budgets:
+      - 20%
+
+# -- Values to control Bottlerocket provisioners
+bottlerocket:
+  # -- Enable the Bottlerocket Provisioner
+  enable: false
+  # -- Requirement for the Bottlerocket provisioner
+  requirements: [ ]
+  # -- Total limits that the provisioner can provision
+  limits:
+    # -- Maximum CPU that the provisioner can provision
+    cpu: 50
+    # -- Maximum memory that the provisioner can provision
+    memory: 100Gi
+  # -- Control how the provisioner handles disruptions
+  disruption:
+    # -- Consolidation policy to use
+    consolidationPolicy: "WhenUnderutilized" # or WhenEmpty
+    # -- Time to wait before consolidating resources
+    consolidateAfter: 30s
+    # -- Time to wait before expiring resources (will automatically restart nodes periodically)
+    expireAfter: 720h
+    # -- Budgets to use for consolidating resources
+    budgets:
+      - 20%

@@ -1,0 +1,63 @@
+{{ if .Values.al2.enable }}
+apiVersion: karpenter.k8s.aws/v1beta1
+kind: EC2NodeClass
+metadata:
+  name: al2
+  labels: {{- include "sulfoxide-krypton.labels" . | nindent 4 }}
+  annotations: {{- include "sulfoxide-krypton.annotations" . | nindent 4 }}
+spec:
+  amiFamily: AL2
+  role: {{ .Values.nodeRole }}
+  subnetSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: "{{ .Values.clusterName }}"
+  securityGroupSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: "{{ .Values.clusterName }}"
+  tags: {{- include "sulfoxide-krypton.labels" . | nindent 4 }}
+    "atomi.cloud/module": "al2-node"
+    karpenter.sh/discovery: "{{ .Values.clusterName }}"
+---
+apiVersion: karpenter.sh/v1beta1
+kind: NodePool
+metadata:
+  name: al2
+  labels: {{- include "sulfoxide-krypton.labels" . | nindent 4 }}
+  annotations: {{- include "sulfoxide-krypton.annotations" . | nindent 4 }}
+spec:
+  template:
+    metadata:
+      labels: {{- include "sulfoxide-krypton.labels" . | nindent 8 }}
+        "atomi.cloud/module": "al2-node"
+      annotations: {{- include "sulfoxide-krypton.annotations" . | nindent 8 }}
+        "atomi.cloud/module": "al2-node"
+    spec:
+      nodeClassRef:
+        name: al2
+      requirements: {{ .Values.al2.requirements | toYaml | nindent 8 }}
+      disruption:
+        {{- with .Values.al2.disruption.consolidationPolicy }}
+        consolidationPolicy: {{ . }}
+        {{- end }}
+        {{- with .Values.al2.disruption.consolidateAfter }}
+        consolidateAfter: {{ . }}
+        {{- end }}
+        {{- with .Values.al2.disruption.expireAfter }}
+        expireAfter: {{ . }}
+        {{- end }}
+        {{- with .Values.al2.disruption.budgets }}
+        budgets: {{ toYaml . | nindent 10 }}
+        {{- end }}
+      {{- with .Values.al2.limits }}
+      limits:
+        {{- with .cpu }}
+        cpu: {{ .}}
+        {{- end }}
+        {{- with .memory }}
+        memory: {{ . }}
+        {{- end }}
+      {{- end }}
+
+
+
+{{- end }}
