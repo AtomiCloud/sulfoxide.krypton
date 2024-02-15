@@ -1,3 +1,10 @@
+## 1.0.0 (2024-02-15)
+
+
+### 🚀 New Features
+
+* initial commit ([8c633b9](https://github.com/AtomiCloud/sulfoxide.krypton/commit/8c633b9205e70fbaae0f975ca045d688a455e661))
+
 ## [1.8.0](https://github.com/AtomiCloud/sulfoxide.sulfur/compare/v1.7.1...v1.8.0) (2024-02-08)
 
 
