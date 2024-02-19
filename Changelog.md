@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.0.0...v1.0.1) (2024-02-19)
+
+
+### 🐛 Bug Fixes
+
+* kubernetes labels not supporrted ([0543cf4](https://github.com/AtomiCloud/sulfoxide.krypton/commit/0543cf4bb2b793649cf36ca88d099c857a6d9b5f))
+
 ## 1.0.0 (2024-02-15)
 
 
