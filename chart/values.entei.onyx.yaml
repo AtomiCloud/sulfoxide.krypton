@@ -7,9 +7,10 @@ tags: &tags
   atomi.cloud/cluster: *cluster
 
 clusterName: &clusterName "entei-onyx"
-nodeRole: "arn:aws:iam::767398020544:role/Karpenter-entei-onyx-20240215061542901500000007"
+nodeRole: "Karpenter-entei-onyx-20240215152610662500000002"
 
 karpenter:
+  fullnameOverride: "krypton"
   settings:
     clusterName: *clusterName
     interruptionQueueName: *clusterName
@@ -23,17 +24,35 @@ karpenter:
     <<: *tags
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: arn:aws:iam::767398020544:role/KarpenterController-2024021506251630280000001e
+      eks.amazonaws.com/role-arn: arn:aws:iam::767398020544:role/KarpenterController-2024021515364744180000001c
       <<: *tags
     labels:
       <<: *tags
 
 al2:
   enable: false
+  requirements:
+    - key: "karpenter.k8s.aws/instance-hypervisor"
+      operator: In
+      values:
+        - nitro
+    - key: "karpenter.k8s.aws/instance-category"
+      operator: In
+      values: [ "t" ]
+    - key: "karpenter.k8s.aws/instance-generation"
+      operator: Gt
+      values: [ "2" ]
+    - key: "karpenter.k8s.aws/instance-cpu"
+      operator: Gt
+      values: [ "2" ]
 
 bottlerocket:
   enable: true
   requirements:
+    - key: "karpenter.k8s.aws/instance-hypervisor"
+      operator: In
+      values:
+        - nitro
     - key: "karpenter.k8s.aws/instance-category"
       operator: In
       values: [ "t" ]

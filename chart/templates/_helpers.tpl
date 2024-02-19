@@ -38,11 +38,6 @@ helm.sh/chart: {{ include "sulfoxide-krypton.chart" . }}
 {{- range $k, $v := .Values.serviceTree }}
 "atomi.cloud/{{ $k }}": "{{ $v }}"
 {{- end }}
-{{ include "sulfoxide-krypton.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-{{- end }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*
@@ -53,14 +48,6 @@ helm.sh/chart: {{ include "sulfoxide-krypton.chart" . }}
 {{- range $k, $v := .Values.serviceTree }}
 "atomi.cloud/{{ $k }}": "{{ $v }}"
 {{- end }}
-{{- end }}
-
-{{/*
-Selector labels
-*/}}
-{{- define "sulfoxide-krypton.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "sulfoxide-krypton.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
