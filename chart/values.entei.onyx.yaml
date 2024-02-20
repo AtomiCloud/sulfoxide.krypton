@@ -7,7 +7,7 @@ tags: &tags
   atomi.cloud/cluster: *cluster
 
 clusterName: &clusterName "entei-onyx"
-nodeRole: "Karpenter-entei-onyx-20240215152610662500000002"
+nodeRole: "Karpenter-entei-onyx-20240220084627806500000007"
 
 karpenter:
   fullnameOverride: "krypton"
@@ -24,7 +24,7 @@ karpenter:
     <<: *tags
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: arn:aws:iam::767398020544:role/KarpenterController-2024021515364744180000001c
+      eks.amazonaws.com/role-arn: arn:aws:iam::767398020544:role/KarpenterController-2024022008540122850000001b
       <<: *tags
     labels:
       <<: *tags
