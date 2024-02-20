@@ -1,3 +1,11 @@
+## [1.1.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.0.1...v1.1.0) (2024-02-20)
+
+
+### 🚀 New Features
+
+* only allow spot and arm instances ([3755680](https://github.com/AtomiCloud/sulfoxide.krypton/commit/37556806c45c170bd3da417877d7a84598e202dd))
+* only allow spot and arm instances ([54fd099](https://github.com/AtomiCloud/sulfoxide.krypton/commit/54fd0998002db3d63e56373a877b79706d70abed))
+
 ## [1.0.1](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.0.0...v1.0.1) (2024-02-19)
 
 
