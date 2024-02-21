@@ -14,10 +14,9 @@ Helm chart to deploy Karpenter to auto-scale EKS clusters
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| al2 | object | `{"disruption":{"budgets":[{"nodes":"20%"}],"consolidateAfter":"30s","consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"},"enable":false,"limits":{"cpu":"50","memory":"100Gi"},"requirements":[]}` | Values to control Amazon Linux 2 (AL2) provisioners |
-| al2.disruption | object | `{"budgets":[{"nodes":"20%"}],"consolidateAfter":"30s","consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"}` | Control how the provisioner handles disruptions |
+| al2 | object | `{"disruption":{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"},"enable":false,"limits":{"cpu":"50","memory":"100Gi"},"requirements":[]}` | Values to control Amazon Linux 2 (AL2) provisioners |
+| al2.disruption | object | `{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"}` | Control how the provisioner handles disruptions |
 | al2.disruption.budgets | list | `[{"nodes":"20%"}]` | Budgets to use for consolidating resources |
-| al2.disruption.consolidateAfter | string | `"30s"` | Time to wait before consolidating resources |
 | al2.disruption.consolidationPolicy | string | `"WhenUnderutilized"` | Consolidation policy to use |
 | al2.disruption.expireAfter | string | `"720h"` | Time to wait before expiring resources (will automatically restart nodes periodically) |
 | al2.enable | bool | `false` | Enable the AL2 Provisioner |
@@ -25,10 +24,9 @@ Helm chart to deploy Karpenter to auto-scale EKS clusters
 | al2.limits.cpu | string | `"50"` | Maximum CPU that the provisioner can provision |
 | al2.limits.memory | string | `"100Gi"` | Maximum memory that the provisioner can provision |
 | al2.requirements | list | `[]` | Requirement for the AL2 provisioner |
-| bottlerocket | object | `{"disruption":{"budgets":[{"nodes":"20%"}],"consolidateAfter":"30s","consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"},"enable":false,"limits":{"cpu":"50","memory":"100Gi"},"requirements":[]}` | Values to control Bottlerocket provisioners |
-| bottlerocket.disruption | object | `{"budgets":[{"nodes":"20%"}],"consolidateAfter":"30s","consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"}` | Control how the provisioner handles disruptions |
+| bottlerocket | object | `{"disruption":{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"},"enable":false,"limits":{"cpu":"50","memory":"100Gi"},"requirements":[]}` | Values to control Bottlerocket provisioners |
+| bottlerocket.disruption | object | `{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"}` | Control how the provisioner handles disruptions |
 | bottlerocket.disruption.budgets | list | `[{"nodes":"20%"}]` | Budgets to use for consolidating resources |
-| bottlerocket.disruption.consolidateAfter | string | `"30s"` | Time to wait before consolidating resources |
 | bottlerocket.disruption.consolidationPolicy | string | `"WhenUnderutilized"` | Consolidation policy to use |
 | bottlerocket.disruption.expireAfter | string | `"720h"` | Time to wait before expiring resources (will automatically restart nodes periodically) |
 | bottlerocket.enable | bool | `false` | Enable the Bottlerocket Provisioner |
