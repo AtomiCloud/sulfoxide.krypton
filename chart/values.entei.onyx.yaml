@@ -1,35 +1,31 @@
 serviceTree:
   landscape: &landscape entei
   cluster: &cluster onyx
-
 tags: &tags
   atomi.cloud/landscape: *landscape
   atomi.cloud/cluster: *cluster
-
 clusterName: &clusterName "entei-onyx"
 nodeRole: "Karpenter-entei-onyx-20240221061259545400000007"
 karpenterRole: &karpenterRole "arn:aws:iam::767398020544:role/KarpenterController-2024022106221275430000001a"
-
 karpenter:
   fullnameOverride: "krypton"
   settings:
     clusterName: *clusterName
     interruptionQueueName: *clusterName
   additionalAnnotations:
-    <<: *tags
+    !!merge <<: *tags
   podLabels:
-    <<: *tags
+    !!merge <<: *tags
   additionalLabels:
-    <<: *tags
+    !!merge <<: *tags
   podAnnotations:
-    <<: *tags
+    !!merge <<: *tags
   serviceAccount:
     annotations:
       eks.amazonaws.com/role-arn: *karpenterRole
-      <<: *tags
+      !!merge <<: *tags
     labels:
-      <<: *tags
-
+      !!merge <<: *tags
 al2:
   enable: false
   requirements:
@@ -39,20 +35,19 @@ al2:
         - nitro
     - key: "karpenter.k8s.aws/instance-category"
       operator: In
-      values: [ "t" ]
+      values: ["t"]
     - key: "karpenter.k8s.aws/instance-generation"
       operator: Gt
-      values: [ "2" ]
+      values: ["2"]
     - key: "karpenter.k8s.aws/instance-cpu"
       operator: Gt
-      values: [ "2" ]
+      values: ["2"]
     - key: "kubernetes.io/arch"
       operator: In
-      values: [ "arm64" ]
+      values: ["arm64"]
     - key: "karpenter.sh/capacity-type"
       operator: In
-      values: [ "spot" ]
-
+      values: ["spot"]
 bottlerocket:
   enable: true
   requirements:
@@ -62,16 +57,16 @@ bottlerocket:
         - nitro
     - key: "karpenter.k8s.aws/instance-category"
       operator: In
-      values: [ "t" ]
+      values: ["t"]
     - key: "karpenter.k8s.aws/instance-generation"
       operator: Gt
-      values: [ "2" ]
+      values: ["2"]
     - key: "karpenter.k8s.aws/instance-cpu"
       operator: Gt
-      values: [ "2" ]
+      values: ["2"]
     - key: "kubernetes.io/arch"
       operator: In
-      values: [ "arm64" ]
+      values: ["arm64"]
     - key: "karpenter.sh/capacity-type"
       operator: In
-      values: [ "spot" ]
+      values: ["spot"]
