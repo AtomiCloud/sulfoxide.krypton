@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.2.0...v1.2.1) (2024-02-21)
+
+
+### 🐛 Bug Fixes
+
+* incorrect nodepool disruption and limits field ([42720c1](https://github.com/AtomiCloud/sulfoxide.krypton/commit/42720c1d56d486ae3a2b9a1a3943f3007f95e090))
+
 ## [1.2.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.1.0...v1.2.0) (2024-02-21)
 
 
