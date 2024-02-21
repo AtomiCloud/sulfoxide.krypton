@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.1.0...v1.2.0) (2024-02-21)
+
+
+### 🚀 New Features
+
+* karpenterRole for easy update ([f33ea36](https://github.com/AtomiCloud/sulfoxide.krypton/commit/f33ea36e30dbaf9ce1453a30fc00994803387dae))
+
 ## [1.1.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.0.1...v1.1.0) (2024-02-20)
 
 
