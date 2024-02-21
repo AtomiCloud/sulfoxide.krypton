@@ -35,27 +35,27 @@ spec:
       nodeClassRef:
         name: bottlerocket
       requirements: {{ .Values.bottlerocket.requirements | toYaml | nindent 8 }}
-      disruption:
-        {{- with .Values.bottlerocket.disruption.consolidationPolicy }}
-        consolidationPolicy: {{ . }}
-        {{- end }}
-        {{- with .Values.bottlerocket.disruption.consolidateAfter }}
-        consolidateAfter: {{ . }}
-        {{- end }}
-        {{- with .Values.bottlerocket.disruption.expireAfter }}
-        expireAfter: {{ . }}
-        {{- end }}
-        {{- with .Values.bottlerocket.disruption.budgets }}
-        budgets: {{ toYaml . | nindent 10 }}
-        {{- end }}
-      {{- with .Values.bottlerocket.limits }}
-      limits:
-        {{- with .cpu }}
-        cpu: {{ .}}
-        {{- end }}
-        {{- with .memory }}
-        memory: {{ . }}
-        {{- end }}
-      {{- end }}
+  disruption:
+    {{- with .Values.bottlerocket.disruption.consolidationPolicy }}
+    consolidationPolicy: {{ . }}
+    {{- end }}
+    {{- with .Values.bottlerocket.disruption.consolidateAfter }}
+    consolidateAfter: {{ . }}
+    {{- end }}
+    {{- with .Values.bottlerocket.disruption.expireAfter }}
+    expireAfter: {{ . }}
+    {{- end }}
+    {{- with .Values.bottlerocket.disruption.budgets }}
+    budgets: {{ toYaml . | nindent 10 }}
+    {{- end }}
+  {{- with .Values.bottlerocket.limits }}
+  limits:
+    {{- with .cpu }}
+    cpu: {{ .}}
+    {{- end }}
+    {{- with .memory }}
+    memory: {{ . }}
+    {{- end }}
+  {{- end }}
 
 {{- end }}

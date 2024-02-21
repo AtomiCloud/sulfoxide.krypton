@@ -35,28 +35,28 @@ spec:
       nodeClassRef:
         name: al2
       requirements: {{ .Values.al2.requirements | toYaml | nindent 8 }}
-      disruption:
-        {{- with .Values.al2.disruption.consolidationPolicy }}
-        consolidationPolicy: {{ . }}
-        {{- end }}
-        {{- with .Values.al2.disruption.consolidateAfter }}
-        consolidateAfter: {{ . }}
-        {{- end }}
-        {{- with .Values.al2.disruption.expireAfter }}
-        expireAfter: {{ . }}
-        {{- end }}
-        {{- with .Values.al2.disruption.budgets }}
-        budgets: {{ toYaml . | nindent 10 }}
-        {{- end }}
-      {{- with .Values.al2.limits }}
-      limits:
-        {{- with .cpu }}
-        cpu: {{ .}}
-        {{- end }}
-        {{- with .memory }}
-        memory: {{ . }}
-        {{- end }}
-      {{- end }}
+  disruption:
+    {{- with .Values.al2.disruption.consolidationPolicy }}
+    consolidationPolicy: {{ . }}
+    {{- end }}
+    {{- with .Values.al2.disruption.consolidateAfter }}
+    consolidateAfter: {{ . }}
+    {{- end }}
+    {{- with .Values.al2.disruption.expireAfter }}
+    expireAfter: {{ . }}
+    {{- end }}
+    {{- with .Values.al2.disruption.budgets }}
+    budgets: {{ toYaml . | nindent 10 }}
+    {{- end }}
+  {{- with .Values.al2.limits }}
+  limits:
+    {{- with .cpu }}
+    cpu: {{ .}}
+    {{- end }}
+    {{- with .memory }}
+    memory: {{ . }}
+    {{- end }}
+  {{- end }}
 
 
 
