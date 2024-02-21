@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.2.1...v1.2.2) (2024-02-21)
+
+
+### 🐛 Bug Fixes
+
+* incorrect consolidateAfter field ([89da21b](https://github.com/AtomiCloud/sulfoxide.krypton/commit/89da21b17870eb60950f6af16135dede9849adfb))
+* incorrect format for bugets and limits ([aefba44](https://github.com/AtomiCloud/sulfoxide.krypton/commit/aefba44ecf36aa14905a0d8e7e3414ad74fb4415))
+
 ## [1.2.1](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.2.0...v1.2.1) (2024-02-21)
 
 
