@@ -66,7 +66,7 @@ al2:
   # -- Total limits that the provisioner can provision
   limits:
     # -- Maximum CPU that the provisioner can provision
-    cpu: 50
+    cpu: "50"
     # -- Maximum memory that the provisioner can provision
     memory: 100Gi
   # -- Control how the provisioner handles disruptions
@@ -79,7 +79,7 @@ al2:
     expireAfter: 720h
     # -- Budgets to use for consolidating resources
     budgets:
-      - 20%
+      - nodes: 20%
 
 # -- Values to control Bottlerocket provisioners
 bottlerocket:
@@ -90,7 +90,7 @@ bottlerocket:
   # -- Total limits that the provisioner can provision
   limits:
     # -- Maximum CPU that the provisioner can provision
-    cpu: 50
+    cpu: "50"
     # -- Maximum memory that the provisioner can provision
     memory: 100Gi
   # -- Control how the provisioner handles disruptions
@@ -103,4 +103,4 @@ bottlerocket:
     expireAfter: 720h
     # -- Budgets to use for consolidating resources
     budgets:
-      - 20%
+      - nodes: 20%
