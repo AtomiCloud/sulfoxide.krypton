@@ -5,8 +5,8 @@ tags: &tags
   atomi.cloud/landscape: *landscape
   atomi.cloud/cluster: *cluster
 clusterName: &clusterName "entei-onyx"
-nodeRole: "Karpenter-entei-onyx-20240221061259545400000007"
-karpenterRole: &karpenterRole "arn:aws:iam::767398020544:role/KarpenterController-2024022106221275430000001a"
+nodeRole: "Karpenter-entei-onyx-20240221123842697200000002"
+karpenterRole: &karpenterRole "arn:aws:iam::767398020544:role/KarpenterController-2024022112461446760000001b"
 karpenter:
   fullnameOverride: "krypton"
   settings:
