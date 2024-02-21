@@ -8,6 +8,7 @@ tags: &tags
 
 clusterName: &clusterName "entei-onyx"
 nodeRole: "Karpenter-entei-onyx-20240221061259545400000007"
+karpenterRole: &karpenterRole "arn:aws:iam::767398020544:role/KarpenterController-2024022106221275430000001a"
 
 karpenter:
   fullnameOverride: "krypton"
@@ -24,7 +25,7 @@ karpenter:
     <<: *tags
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: arn:aws:iam::767398020544:role/KarpenterController-2024022106221275430000001a
+      eks.amazonaws.com/role-arn: *karpenterRole
       <<: *tags
     labels:
       <<: *tags

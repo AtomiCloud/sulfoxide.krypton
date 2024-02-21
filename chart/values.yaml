@@ -14,6 +14,8 @@ tags: &tags
 clusterName: name
 # -- Name of the node role that each node has to assume
 nodeRole: karpenter-role
+# -- Name of the karpenter role ARN that the karpenter controller has to assume
+karpenterRole: &karpenterRole karpenter-controller-role
 
 # -- Karpenter configuration. See [Karpenter Helm Chart](https://github.com/aws/karpenter-provider-aws/tree/main/charts/karpenter)
 karpenter:
@@ -50,7 +52,7 @@ karpenter:
           <<: *tags
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: ""
+      eks.amazonaws.com/role-arn: *karpenterRole
     labels:
       <<: *tags
 
