@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.2.2...v1.3.0) (2024-02-26)
+
+
+### 🚀 New Features
+
+* allow more instances ([a9cb6fe](https://github.com/AtomiCloud/sulfoxide.krypton/commit/a9cb6fe2da862fcc054e1b9f4a3cfaee781104fb))
+
 ## [1.2.2](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.2.1...v1.2.2) (2024-02-21)
 
 
