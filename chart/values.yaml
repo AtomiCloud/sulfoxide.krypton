@@ -66,9 +66,9 @@ al2:
   # -- Total limits that the provisioner can provision
   limits:
     # -- Maximum CPU that the provisioner can provision
-    cpu: "50"
+    cpu: "100"
     # -- Maximum memory that the provisioner can provision
-    memory: 100Gi
+    memory: 200Gi
   # -- Control how the provisioner handles disruptions
   disruption:
     # -- Consolidation policy to use
