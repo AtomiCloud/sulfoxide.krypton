@@ -27,8 +27,8 @@ metadata:
 spec:
   template:
     metadata:
-      labels: {{- include "sulfoxide-krypton.labels" . | nindent 8 }}
-        "atomi.cloud/module": "bottlerocket-node"
+#      labels: {{- include "sulfoxide-krypton.labels" . | nindent 8 }}
+#        "atomi.cloud/module": "bottlerocket-node"
       annotations: {{- include "sulfoxide-krypton.annotations" . | nindent 8 }}
         "atomi.cloud/module": "bottlerocket-node"
     spec:
