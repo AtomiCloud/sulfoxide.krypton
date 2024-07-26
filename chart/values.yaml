@@ -90,9 +90,9 @@ bottlerocket:
   # -- Total limits that the provisioner can provision
   limits:
     # -- Maximum CPU that the provisioner can provision
-    cpu: "150"
+    cpu: "200"
     # -- Maximum memory that the provisioner can provision
-    memory: 300Gi
+    memory: 400Gi
   # -- Control how the provisioner handles disruptions
   disruption:
     # -- Consolidation policy to use

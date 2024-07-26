@@ -24,15 +24,15 @@ Helm chart to deploy Karpenter to auto-scale EKS clusters
 | al2.limits.cpu | string | `"100"` | Maximum CPU that the provisioner can provision |
 | al2.limits.memory | string | `"200Gi"` | Maximum memory that the provisioner can provision |
 | al2.requirements | list | `[]` | Requirement for the AL2 provisioner |
-| bottlerocket | object | `{"disruption":{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"},"enable":false,"limits":{"cpu":"150","memory":"300Gi"},"requirements":[]}` | Values to control Bottlerocket provisioners |
+| bottlerocket | object | `{"disruption":{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"},"enable":false,"limits":{"cpu":"200","memory":"400Gi"},"requirements":[]}` | Values to control Bottlerocket provisioners |
 | bottlerocket.disruption | object | `{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"}` | Control how the provisioner handles disruptions |
 | bottlerocket.disruption.budgets | list | `[{"nodes":"20%"}]` | Budgets to use for consolidating resources |
 | bottlerocket.disruption.consolidationPolicy | string | `"WhenUnderutilized"` | Consolidation policy to use |
 | bottlerocket.disruption.expireAfter | string | `"720h"` | Time to wait before expiring resources (will automatically restart nodes periodically) |
 | bottlerocket.enable | bool | `false` | Enable the Bottlerocket Provisioner |
-| bottlerocket.limits | object | `{"cpu":"150","memory":"300Gi"}` | Total limits that the provisioner can provision |
-| bottlerocket.limits.cpu | string | `"150"` | Maximum CPU that the provisioner can provision |
-| bottlerocket.limits.memory | string | `"300Gi"` | Maximum memory that the provisioner can provision |
+| bottlerocket.limits | object | `{"cpu":"200","memory":"400Gi"}` | Total limits that the provisioner can provision |
+| bottlerocket.limits.cpu | string | `"200"` | Maximum CPU that the provisioner can provision |
+| bottlerocket.limits.memory | string | `"400Gi"` | Maximum memory that the provisioner can provision |
 | bottlerocket.requirements | list | `[]` | Requirement for the Bottlerocket provisioner |
 | clusterName | string | `"name"` | Name of the cluster karpenter is deployed to |
 | karpenter | object | `{"additionalAnnotations":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}},"additionalLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}},"controller":{"resources":{"limits":{"cpu":"250m","memory":"1Gi"},"requests":{"cpu":"250m","memory":"1Gi"}}},"podAnnotations":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"},"atomi.cloud/module":"karpenter"},"podLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"},"atomi.cloud/module":"karpenter"},"serviceAccount":{"annotations":{"eks.amazonaws.com/role-arn":"karpenter-controller-role"},"labels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}}},"serviceMonitor":{"enabled":false},"settings":{"clusterName":null,"interruptionQueueName":null},"topologySpreadConstraints":[{"labelSelector":{"matchLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}}},"maxSkew":1,"topologyKey":"topology.kubernetes.io/zone","whenUnsatisfiable":"ScheduleAnyway"}]}` | Karpenter configuration. See [Karpenter Helm Chart](https://github.com/aws/karpenter-provider-aws/tree/main/charts/karpenter) |
