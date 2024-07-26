@@ -57,16 +57,16 @@ bottlerocket:
         - nitro
     - key: "karpenter.k8s.aws/instance-category"
       operator: In
-      values: ["t","m","r"]
-#    - key: "karpenter.k8s.aws/instance-generation"
-#      operator: Gt
-#      values: ["2"]
-#    - key: "karpenter.k8s.aws/instance-cpu"
-#      operator: Gt
-#      values: ["2"]
-#    - key: "kubernetes.io/arch"
-#      operator: In
-#      values: ["arm64","amd64"]
+      values: ["t","m","r","c"]
+    - key: "karpenter.k8s.aws/instance-generation"
+      operator: Gt
+      values: ["2"]
+    - key: "karpenter.k8s.aws/instance-cpu"
+      operator: Gt
+      values: ["2"]
+    - key: "kubernetes.io/arch"
+      operator: In
+      values: ["arm64","amd64"]
     - key: "karpenter.sh/capacity-type"
       operator: In
       values: ["spot"]
