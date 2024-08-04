@@ -61,9 +61,9 @@ bottlerocket:
 #    - key: "karpenter.k8s.aws/instance-generation"
 #      operator: Gt
 #      values: ["2"]
-#    - key: "karpenter.k8s.aws/instance-cpu"
-#      operator: Gt
-#      values: ["2"]
+    - key: "karpenter.k8s.aws/instance-cpu"
+      operator: Gt
+      values: ["4"]
     - key: "kubernetes.io/arch"
       operator: In
       values: ["arm64","amd64"]
