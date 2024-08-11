@@ -1,3 +1,26 @@
+## [1.4.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.3.0...v1.4.0) (2024-08-11)
+
+
+### 📦 Upstreams Changes
+
+* upgrade nix, helm upstream, GHA ([51c90c9](https://github.com/AtomiCloud/sulfoxide.krypton/commit/51c90c9fffd37dbe34be4d7508aa56ceccee51b9))
+
+
+### 🚀 New Features
+
+* allow more instance category ([a67904c](https://github.com/AtomiCloud/sulfoxide.krypton/commit/a67904c85969dbce3f6d28bf6838bea77afde19e))
+* increase limits ([75886a9](https://github.com/AtomiCloud/sulfoxide.krypton/commit/75886a9fd428a0624e74cd4d69cab4f79f962cdc))
+* reduce requirements for scheduling ([aa9ab28](https://github.com/AtomiCloud/sulfoxide.krypton/commit/aa9ab28720548d0d22c277862f41e0ce4774b809))
+* remove arch from requirement ([3593f0d](https://github.com/AtomiCloud/sulfoxide.krypton/commit/3593f0d4264fb7a8a9919b3768fc9e241175be85))
+* remove the demand for atomi labels ([5610ace](https://github.com/AtomiCloud/sulfoxide.krypton/commit/5610ace32c4057d86efcdf1395a4fb10d8a14698))
+
+
+### 🐛 Bug Fixes
+
+* incorrect helm template ([1c3d482](https://github.com/AtomiCloud/sulfoxide.krypton/commit/1c3d48200219b5173187f35ad4585cb37be0bf08))
+* incorrect helm template ([aa7a7c4](https://github.com/AtomiCloud/sulfoxide.krypton/commit/aa7a7c4f60922f960f3bb78eba9e3ecbcd8b3bcf))
+* increase req-lim mem for krypton ([5d875f3](https://github.com/AtomiCloud/sulfoxide.krypton/commit/5d875f344bdb1c6334827a486657e5ca8c7cb706))
+
 ## [1.3.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.2.2...v1.3.0) (2024-02-26)
 
 
