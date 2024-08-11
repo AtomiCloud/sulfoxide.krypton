@@ -34,4 +34,9 @@ tasks:
     desc: Get the latest version of Cert Manager
     cmds:
       - >-
-        echo "karpenter: $(skopeo list-tags docker://public.ecr.aws/karpenter/karpenter | jq -r '.Tags[]' | sort -V | tail -n 1)"
+        echo "karpenter: $(skopeo list-tags docker://public.ecr.aws/karpenter/karpenter 
+        | jq -r '.Tags[]' 
+        | grep -Eo '\b[0-9]+\.[0-9]+\.[0-9]+\b' 
+        | sort -V 
+        | tail -n 1
+        )"
