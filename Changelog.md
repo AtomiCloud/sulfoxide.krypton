@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.4.0...v1.5.0) (2024-08-11)
+
+
+### 🚀 New Features
+
+* propagated nodeRole and karpenterRole ([b053d8b](https://github.com/AtomiCloud/sulfoxide.krypton/commit/b053d8bffa7a380598e343706e2338329c560964))
+
 ## [1.4.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.3.0...v1.4.0) (2024-08-11)
 
 
