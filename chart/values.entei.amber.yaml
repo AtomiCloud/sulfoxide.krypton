@@ -1,0 +1,69 @@
+serviceTree:
+  landscape: &landscape entei
+  cluster: &cluster amber
+tags: &tags
+  atomi.cloud/landscape: *landscape
+  atomi.cloud/cluster: *cluster
+clusterName: &clusterName "entei-amber"
+nodeRole: ""
+karpenterRole: &karpenterRole ""
+karpenter:
+  fullnameOverride: "krypton"
+  settings:
+    clusterName: *clusterName
+    interruptionQueueName: *clusterName
+  additionalAnnotations:
+    !!merge <<: *tags
+  podLabels:
+    !!merge <<: *tags
+  additionalLabels:
+    !!merge <<: *tags
+  podAnnotations:
+    !!merge <<: *tags
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: *karpenterRole
+      !!merge <<: *tags
+    labels:
+      !!merge <<: *tags
+al2:
+  enable: false
+  requirements:
+    - key: "karpenter.k8s.aws/instance-hypervisor"
+      operator: In
+      values:
+        - nitro
+    - key: "karpenter.k8s.aws/instance-category"
+      operator: In
+      values: ["t"]
+    - key: "karpenter.k8s.aws/instance-generation"
+      operator: Gt
+      values: ["2"]
+    - key: "karpenter.k8s.aws/instance-cpu"
+      operator: Gt
+      values: ["2"]
+    - key: "kubernetes.io/arch"
+      operator: In
+      values: ["arm64"]
+    - key: "karpenter.sh/capacity-type"
+      operator: In
+      values: ["spot"]
+bottlerocket:
+  enable: true
+  requirements:
+    - key: "karpenter.k8s.aws/instance-hypervisor"
+      operator: In
+      values:
+        - nitro
+    - key: "karpenter.k8s.aws/instance-category"
+      operator: In
+      values: ["t","m","r","c","i"]
+    - key: "karpenter.k8s.aws/instance-cpu"
+      operator: Gt
+      values: ["4"]
+    - key: "kubernetes.io/arch"
+      operator: In
+      values: ["arm64","amd64"]
+    - key: "karpenter.sh/capacity-type"
+      operator: In
+      values: ["spot"]
