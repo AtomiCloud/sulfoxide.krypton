@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.5.0...v1.6.0) (2024-08-11)
+
+
+### 📦 Upstreams Changes
+
+* **karpenter:** upgrade to 0.37.0 ([ab9630c](https://github.com/AtomiCloud/sulfoxide.krypton/commit/ab9630c613410338f4c216dbabfb82fe1595a38c))
+
 ## [1.5.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.4.0...v1.5.0) (2024-08-11)
 
 
