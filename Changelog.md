@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.6.0...v1.6.1) (2024-08-16)
+
+
+### 🐛 Bug Fixes
+
+* upgrade to topaz ([8d29be9](https://github.com/AtomiCloud/sulfoxide.krypton/commit/8d29be9b817f82f6cc797543c877c806d164740e))
+
 ## [1.6.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.5.0...v1.6.0) (2024-08-11)
 
 
