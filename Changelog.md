@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.6.1...v1.6.2) (2024-08-25)
+
+
+### 🐛 Bug Fixes
+
+* missing region configuration ([3e32c99](https://github.com/AtomiCloud/sulfoxide.krypton/commit/3e32c99b917f8318f35c428fbc4566d59ffc86df))
+
 ## [1.6.1](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.6.0...v1.6.1) (2024-08-16)
 
 
