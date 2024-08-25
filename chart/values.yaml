@@ -35,7 +35,9 @@ karpenter:
     <<: *tags
     atomi.cloud/module: "karpenter"
   controller:
-
+    env:
+      - name: AWS_REGION
+        value: ap-southeast-1
     resources:
       limits:
         cpu: 250m
