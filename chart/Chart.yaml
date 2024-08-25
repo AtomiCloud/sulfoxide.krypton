@@ -2,7 +2,7 @@ apiVersion: v2
 name: sulfoxide-krypton
 description: Helm chart to deploy Karpenter to auto-scale EKS clusters
 type: application
-version: 1.6.4
+version: 1.7.0
 appVersion: "1.0.1"
 dependencies:
   - name: karpenter
