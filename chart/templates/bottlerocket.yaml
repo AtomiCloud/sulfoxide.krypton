@@ -7,6 +7,8 @@ metadata:
 spec:
   amiFamily: Bottlerocket
   role: {{ .Values.nodeRole }}
+  amiSelectorTerms:
+    - alias: bottlerocket
   subnetSelectorTerms:
     - tags:
         karpenter.sh/discovery: "{{ .Values.clusterName }}"

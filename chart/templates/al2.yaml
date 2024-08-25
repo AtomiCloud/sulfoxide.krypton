@@ -8,6 +8,8 @@ metadata:
 spec:
   amiFamily: AL2
   role: {{ .Values.nodeRole }}
+  amiSelectorTerms:
+    - alias: al2
   subnetSelectorTerms:
     - tags:
         karpenter.sh/discovery: "{{ .Values.clusterName }}"
