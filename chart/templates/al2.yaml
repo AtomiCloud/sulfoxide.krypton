@@ -35,6 +35,8 @@ spec:
         "atomi.cloud/module": "al2-node"
     spec:
       nodeClassRef:
+        group: karpenter.k8s.aws
+        kind: EC2NodeClass
         name: al2
       requirements: {{ .Values.al2.requirements | toYaml | nindent 8 }}
   disruption:

@@ -56,7 +56,7 @@ al2:
     cpu: 1000
     memory: 1000Gi
   disruption:
-    consolidationPolicy: "WhenUnderutilized" # or WhenEmpty
+    consolidationPolicy: "WhenEmptyOrUnderutilized" # or WhenEmpty
     consolidateAfter: 30s
     expireAfter: 720h
     budgets:
@@ -90,7 +90,7 @@ bottlerocket:
     cpu: 1000
     memory: 1000Gi
   disruption:
-    consolidationPolicy: "WhenUnderutilized" # or WhenEmpty
+    consolidationPolicy: "WhenEmptyOrUnderutilized" # or WhenEmpty
     consolidateAfter: 30s
     expireAfter: 720h
     budgets:

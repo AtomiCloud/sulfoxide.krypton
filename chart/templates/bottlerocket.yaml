@@ -32,6 +32,8 @@ spec:
         "atomi.cloud/module": "bottlerocket-node"
     spec:
       nodeClassRef:
+        group: karpenter.k8s.aws
+        kind: EC2NodeClass
         name: bottlerocket
       {{- with .Values.bottlerocket.disruption.expireAfter }}
       expireAfter: {{ . }}

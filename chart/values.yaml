@@ -77,7 +77,7 @@ al2:
     # -- Consolidation policy to use
     consolidationPolicy: "WhenEmptyOrUnderutilized" # or WhenEmpty
     # -- Time to wait before consolidating resources
-#    consolidateAfter: 30s
+    consolidateAfter: 1m
     # -- Time to wait before expiring resources (will automatically restart nodes periodically)
     expireAfter: 720h
     # -- Budgets to use for consolidating resources
@@ -99,9 +99,9 @@ bottlerocket:
   # -- Control how the provisioner handles disruptions
   disruption:
     # -- Consolidation policy to use
-    consolidationPolicy: "WhenUnderutilized" # or WhenEmpty
+    consolidationPolicy: "WhenEmptyOrUnderutilized" # or WhenEmpty
     # -- Time to wait before consolidating resources
-#    consolidateAfter: 30s
+    consolidateAfter: 1m
     # -- Time to wait before expiring resources (will automatically restart nodes periodically)
     expireAfter: 720h
     # -- Budgets to use for consolidating resources
