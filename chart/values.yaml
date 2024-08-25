@@ -19,6 +19,7 @@ karpenterRole: &karpenterRole karpenter-controller-role
 
 # -- Karpenter configuration. See [Karpenter Helm Chart](https://github.com/aws/karpenter-provider-aws/tree/main/charts/karpenter)
 karpenter:
+  dnsPolicy: Default
   serviceMonitor:
     enabled: false
   settings:
@@ -34,8 +35,10 @@ karpenter:
   podAnnotations:
     <<: *tags
     atomi.cloud/module: "karpenter"
-  dnsPolicy: Default
   controller:
+    env:
+      - name: AWS_REGION
+        value: ap-southeast-1
     resources:
       limits:
         cpu: 250m
