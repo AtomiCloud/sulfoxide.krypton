@@ -75,7 +75,7 @@ al2:
   # -- Control how the provisioner handles disruptions
   disruption:
     # -- Consolidation policy to use
-    consolidationPolicy: "WhenUnderutilized" # or WhenEmpty
+    consolidationPolicy: "WhenEmptyOrUnderutilized" # or WhenEmpty
     # -- Time to wait before consolidating resources
 #    consolidateAfter: 30s
     # -- Time to wait before expiring resources (will automatically restart nodes periodically)

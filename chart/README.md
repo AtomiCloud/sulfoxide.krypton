@@ -14,10 +14,10 @@ Helm chart to deploy Karpenter to auto-scale EKS clusters
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| al2 | object | `{"disruption":{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"},"enable":false,"limits":{"cpu":"100","memory":"200Gi"},"requirements":[]}` | Values to control Amazon Linux 2 (AL2) provisioners |
-| al2.disruption | object | `{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenUnderutilized","expireAfter":"720h"}` | Control how the provisioner handles disruptions |
+| al2 | object | `{"disruption":{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenEmptyOrUnderutilized","expireAfter":"720h"},"enable":false,"limits":{"cpu":"100","memory":"200Gi"},"requirements":[]}` | Values to control Amazon Linux 2 (AL2) provisioners |
+| al2.disruption | object | `{"budgets":[{"nodes":"20%"}],"consolidationPolicy":"WhenEmptyOrUnderutilized","expireAfter":"720h"}` | Control how the provisioner handles disruptions |
 | al2.disruption.budgets | list | `[{"nodes":"20%"}]` | Budgets to use for consolidating resources |
-| al2.disruption.consolidationPolicy | string | `"WhenUnderutilized"` | Consolidation policy to use |
+| al2.disruption.consolidationPolicy | string | `"WhenEmptyOrUnderutilized"` | Consolidation policy to use |
 | al2.disruption.expireAfter | string | `"720h"` | Time to wait before expiring resources (will automatically restart nodes periodically) |
 | al2.enable | bool | `false` | Enable the AL2 Provisioner |
 | al2.limits | object | `{"cpu":"100","memory":"200Gi"}` | Total limits that the provisioner can provision |

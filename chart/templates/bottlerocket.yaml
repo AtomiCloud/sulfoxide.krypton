@@ -31,6 +31,9 @@ spec:
     spec:
       nodeClassRef:
         name: bottlerocket
+      {{- with .Values.bottlerocket.disruption.expireAfter }}
+      expireAfter: {{ . }}
+      {{- end }}
       requirements: {{ .Values.bottlerocket.requirements | toYaml | nindent 8 }}
   disruption:
     {{- with .Values.bottlerocket.disruption.consolidationPolicy }}
@@ -38,9 +41,6 @@ spec:
     {{- end }}
     {{- with .Values.bottlerocket.disruption.consolidateAfter }}
     consolidateAfter: {{ . }}
-    {{- end }}
-    {{- with .Values.bottlerocket.disruption.expireAfter }}
-    expireAfter: {{ . }}
     {{- end }}
     {{- with .Values.bottlerocket.disruption.budgets }}
     budgets: {{ toYaml . | nindent 10 }}
