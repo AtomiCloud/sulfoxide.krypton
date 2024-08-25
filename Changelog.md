@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.6.3...v1.6.4) (2024-08-25)
+
+
+### 🐛 Bug Fixes
+
+* incorrect file to place env configuration ([1534d85](https://github.com/AtomiCloud/sulfoxide.krypton/commit/1534d85c55098a3b8b8c0629c1ee7c8cf1f98692))
+
 ## [1.6.3](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.6.2...v1.6.3) (2024-08-25)
 
 
