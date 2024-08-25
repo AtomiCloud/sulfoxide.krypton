@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.1...v1.7.2) (2024-08-25)
+
+
+### 🐛 Bug Fixes
+
+* incorrect naming override ([18cbc05](https://github.com/AtomiCloud/sulfoxide.krypton/commit/18cbc053febedd6cf2410f34d86ddbeb9476fac8))
+
 ## [1.7.1](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.0...v1.7.1) (2024-08-25)
 
 
