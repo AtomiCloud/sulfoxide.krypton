@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.0...v1.7.1) (2024-08-25)
+
+
+### 🐛 Bug Fixes
+
+* DNS policy default ([64d2572](https://github.com/AtomiCloud/sulfoxide.krypton/commit/64d257287b403eb56af3cd24bf7ec3c3f941935d))
+
 ## [1.7.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.6.4...v1.7.0) (2024-08-25)
 
 
