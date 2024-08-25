@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.3...v1.7.4) (2024-08-25)
+
+
+### 🐛 Bug Fixes
+
+* missing ami selector ([66a4cda](https://github.com/AtomiCloud/sulfoxide.krypton/commit/66a4cda4bda3b03a32b74e1a9bc927509e8da5e1))
+
 ## [1.7.3](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.2...v1.7.3) (2024-08-25)
 
 
