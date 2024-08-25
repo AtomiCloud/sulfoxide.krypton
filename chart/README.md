@@ -1,6 +1,6 @@
 # sulfoxide-krypton
 
-![Version: 1.6.4](https://img.shields.io/badge/Version-1.6.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.37.0](https://img.shields.io/badge/AppVersion-0.37.0-informational?style=flat-square)
+![Version: 1.6.4](https://img.shields.io/badge/Version-1.6.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
 
 Helm chart to deploy Karpenter to auto-scale EKS clusters
 
@@ -8,7 +8,7 @@ Helm chart to deploy Karpenter to auto-scale EKS clusters
 
 | Repository | Name | Version |
 |------------|------|---------|
-| oci://public.ecr.aws/karpenter | karpenter | 0.37.0 |
+| oci://public.ecr.aws/karpenter | karpenter | 1.0.1 |
 
 ## Values
 
@@ -35,7 +35,7 @@ Helm chart to deploy Karpenter to auto-scale EKS clusters
 | bottlerocket.limits.memory | string | `"400Gi"` | Maximum memory that the provisioner can provision |
 | bottlerocket.requirements | list | `[]` | Requirement for the Bottlerocket provisioner |
 | clusterName | string | `"name"` | Name of the cluster karpenter is deployed to |
-| karpenter | object | `{"additionalAnnotations":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}},"additionalLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}},"controller":{"env":[{"name":"AWS_REGION","value":"ap-southeast-1"}],"resources":{"limits":{"cpu":"250m","memory":"1Gi"},"requests":{"cpu":"250m","memory":"1Gi"}}},"podAnnotations":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"},"atomi.cloud/module":"karpenter"},"podLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"},"atomi.cloud/module":"karpenter"},"serviceAccount":{"annotations":{"eks.amazonaws.com/role-arn":"karpenter-controller-role"},"labels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}}},"serviceMonitor":{"enabled":false},"settings":{"clusterName":null,"interruptionQueueName":null},"topologySpreadConstraints":[{"labelSelector":{"matchLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}}},"maxSkew":1,"topologyKey":"topology.kubernetes.io/zone","whenUnsatisfiable":"ScheduleAnyway"}]}` | Karpenter configuration. See [Karpenter Helm Chart](https://github.com/aws/karpenter-provider-aws/tree/main/charts/karpenter) |
+| karpenter | object | `{"additionalAnnotations":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}},"additionalLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}},"controller":{"resources":{"limits":{"cpu":"250m","memory":"1Gi"},"requests":{"cpu":"250m","memory":"1Gi"}}},"podAnnotations":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"},"atomi.cloud/module":"karpenter"},"podLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"},"atomi.cloud/module":"karpenter"},"serviceAccount":{"annotations":{"eks.amazonaws.com/role-arn":"karpenter-controller-role"},"labels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}}},"serviceMonitor":{"enabled":false},"settings":{"clusterName":null,"interruptionQueueName":null},"topologySpreadConstraints":[{"labelSelector":{"matchLabels":{"<<":{"atomi.cloud/layer":"1","atomi.cloud/platform":"sulfoxide","atomi.cloud/service":"krypton"}}},"maxSkew":1,"topologyKey":"topology.kubernetes.io/zone","whenUnsatisfiable":"ScheduleAnyway"}]}` | Karpenter configuration. See [Karpenter Helm Chart](https://github.com/aws/karpenter-provider-aws/tree/main/charts/karpenter) |
 | karpenterRole | string | `"karpenter-controller-role"` | Name of the karpenter role ARN that the karpenter controller has to assume |
 | nodeRole | string | `"karpenter-role"` | Name of the node role that each node has to assume |
 | serviceTree | object | `{"layer":"1","platform":"sulfoxide","service":"krypton"}` | AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb) |
