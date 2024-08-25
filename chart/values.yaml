@@ -19,9 +19,6 @@ karpenterRole: &karpenterRole karpenter-controller-role
 
 # -- Karpenter configuration. See [Karpenter Helm Chart](https://github.com/aws/karpenter-provider-aws/tree/main/charts/karpenter)
 karpenter:
-  env:
-    - name: AWS_REGION
-      value: ap-southeast-1
   serviceMonitor:
     enabled: false
   settings:
