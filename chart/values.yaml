@@ -34,10 +34,8 @@ karpenter:
   podAnnotations:
     <<: *tags
     atomi.cloud/module: "karpenter"
+  dnsPolicy: Default
   controller:
-    env:
-      - name: AWS_REGION
-        value: ap-southeast-1
     resources:
       limits:
         cpu: 250m
