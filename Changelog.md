@@ -1,3 +1,10 @@
+## [1.7.6](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.5...v1.7.6) (2024-08-25)
+
+
+### 🐛 Bug Fixes
+
+* incorrect nodepool ([31021a3](https://github.com/AtomiCloud/sulfoxide.krypton/commit/31021a32c8f11cb262e8906eb2b3ac7155f7225b))
+
 ## [1.7.5](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.4...v1.7.5) (2024-08-25)
 
 
