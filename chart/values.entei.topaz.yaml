@@ -8,6 +8,7 @@ clusterName: &clusterName "entei-topaz"
 nodeRole: "Karpenter-entei-topaz-20240825140831498600000011"
 karpenterRole: &karpenterRole "arn:aws:iam::445567088997:role/KarpenterController-20240825140831506800000012"
 karpenter:
+  fullnameOverride: "krypton"
   settings:
     clusterName: *clusterName
     interruptionQueueName: *clusterName
