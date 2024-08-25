@@ -5,8 +5,8 @@ tags: &tags
   atomi.cloud/landscape: *landscape
   atomi.cloud/cluster: *cluster
 clusterName: &clusterName "entei-topaz"
-nodeRole: "Karpenter-entei-topaz-20240816165138866300000010"
-karpenterRole: &karpenterRole "arn:aws:iam::982534394842:role/KarpenterController-20240816165140467200000012"
+nodeRole: "Karpenter-entei-topaz-20240825125409002200000011"
+karpenterRole: &karpenterRole "arn:aws:iam::445567088997:role/KarpenterController-20240825125409978000000012"
 karpenter:
   fullnameOverride: "krypton"
   settings:
@@ -35,19 +35,19 @@ al2:
         - nitro
     - key: "karpenter.k8s.aws/instance-category"
       operator: In
-      values: ["t"]
+      values: [ "t" ]
     - key: "karpenter.k8s.aws/instance-generation"
       operator: Gt
-      values: ["2"]
+      values: [ "2" ]
     - key: "karpenter.k8s.aws/instance-cpu"
       operator: Gt
-      values: ["2"]
+      values: [ "2" ]
     - key: "kubernetes.io/arch"
       operator: In
-      values: ["arm64"]
+      values: [ "arm64" ]
     - key: "karpenter.sh/capacity-type"
       operator: In
-      values: ["spot"]
+      values: [ "spot" ]
 bottlerocket:
   enable: true
   requirements:
@@ -57,16 +57,16 @@ bottlerocket:
         - nitro
     - key: "karpenter.k8s.aws/instance-category"
       operator: In
-      values: ["t","m","r","c","i"]
-#    - key: "karpenter.k8s.aws/instance-generation"
-#      operator: Gt
-#      values: ["2"]
+      values: [ "t", "m", "r", "c", "i" ]
+    #    - key: "karpenter.k8s.aws/instance-generation"
+    #      operator: Gt
+    #      values: ["2"]
     - key: "karpenter.k8s.aws/instance-cpu"
       operator: Gt
-      values: ["4"]
+      values: [ "4" ]
     - key: "kubernetes.io/arch"
       operator: In
-      values: ["arm64","amd64"]
+      values: [ "arm64", "amd64" ]
     - key: "karpenter.sh/capacity-type"
       operator: In
-      values: ["spot"]
+      values: [ "spot" ]
