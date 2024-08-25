@@ -5,8 +5,8 @@ tags: &tags
   atomi.cloud/landscape: *landscape
   atomi.cloud/cluster: *cluster
 clusterName: &clusterName "entei-topaz"
-nodeRole: "Karpenter-entei-topaz-20240825125409002200000011"
-karpenterRole: &karpenterRole "arn:aws:iam::445567088997:role/KarpenterController-20240825125409978000000012"
+nodeRole: "Karpenter-entei-topaz-20240825140831498600000011"
+karpenterRole: &karpenterRole "arn:aws:iam::445567088997:role/KarpenterController-20240825140831506800000012"
 karpenter:
   settings:
     clusterName: *clusterName
