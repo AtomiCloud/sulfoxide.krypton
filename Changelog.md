@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.4...v1.7.5) (2024-08-25)
+
+
+### 🐛 Bug Fixes
+
+* missing pin for ami ([b9d0284](https://github.com/AtomiCloud/sulfoxide.krypton/commit/b9d028473414497a942198191419cb087ebd57a5))
+
 ## [1.7.4](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.3...v1.7.4) (2024-08-25)
 
 
