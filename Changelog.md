@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.6...v1.8.0) (2024-10-02)
+
+
+### 📦 Upstreams Changes
+
+* **atominix:** ugrading to 28.0.0 ([e31533a](https://github.com/AtomiCloud/sulfoxide.krypton/commit/e31533a8688e68bc3175dc02b518e6952c2d2236))
+
 ## [1.7.6](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.5...v1.7.6) (2024-08-25)
 
 
