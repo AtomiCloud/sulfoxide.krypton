@@ -1,3 +1,10 @@
+## [1.9.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.8.0...v1.9.0) (2024-11-17)
+
+
+### 🚀 New Features
+
+* schedule only in 1c ([2da65b2](https://github.com/AtomiCloud/sulfoxide.krypton/commit/2da65b27d79acc3de003867b7e4d8fec50d3a863))
+
 ## [1.8.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.7.6...v1.8.0) (2024-10-02)
 
 
