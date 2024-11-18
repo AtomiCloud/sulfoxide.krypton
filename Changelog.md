@@ -1,3 +1,10 @@
+## [1.11.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.10.0...v1.11.0) (2024-11-18)
+
+
+### 🚀 New Features
+
+* enable configuring max pods ([4bf6c2f](https://github.com/AtomiCloud/sulfoxide.krypton/commit/4bf6c2fccd3c2284a372e56c91f83c6098d8a767))
+
 ## [1.10.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.9.0...v1.10.0) (2024-11-17)
 
 
