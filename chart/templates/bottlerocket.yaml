@@ -5,6 +5,10 @@ metadata:
   name: bottlerocket
   annotations: {{- include "sulfoxide-krypton.annotations" . | nindent 4 }}
 spec:
+  {{- with .Values.bottlerocket.maxPods }}
+  kubelet:
+    maxPods: {{ . }}
+  {{- end }}
   amiFamily: Bottlerocket
   role: {{ .Values.nodeRole }}
   amiSelectorTerms:
@@ -31,10 +35,6 @@ spec:
       annotations: {{- include "sulfoxide-krypton.annotations" . | nindent 8 }}
         "atomi.cloud/module": "bottlerocket-node"
     spec:
-      {{- with .Values.bottlerocket.maxPods }}
-      kubelet:
-        maxPods: {{ . }}
-      {{- end }}
       nodeClassRef:
         group: karpenter.k8s.aws
         kind: EC2NodeClass
