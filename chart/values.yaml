@@ -88,6 +88,8 @@ al2:
 bottlerocket:
   # -- Enable the Bottlerocket Provisioner
   enable: false
+  # -- Maximum number of pods that can be scheduled on a node
+  maxPods: 110
   # -- Requirement for the Bottlerocket provisioner
   requirements: [ ]
   # -- Total limits that the provisioner can provision

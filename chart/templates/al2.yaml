@@ -34,6 +34,10 @@ spec:
       annotations: {{- include "sulfoxide-krypton.annotations" . | nindent 8 }}
         "atomi.cloud/module": "al2-node"
     spec:
+      {{- with .Values.al2.maxPods }}
+      kubelet:
+        maxPods: {{ . }}
+      {{- end }}
       nodeClassRef:
         group: karpenter.k8s.aws
         kind: EC2NodeClass
