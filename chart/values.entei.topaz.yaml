@@ -7,8 +7,13 @@ tags: &tags
 clusterName: &clusterName "entei-topaz"
 nodeRole: "Karpenter-entei-topaz-20241117140826544400000011"
 karpenterRole: &karpenterRole "arn:aws:iam::058264095736:role/KarpenterController-20241117140827179600000012"
+
+
+
 karpenter:
   fullnameOverride: "krypton"
+  nodeSelector:
+    topology.kubernetes.io/zone: ap-southeast-1c
   settings:
     clusterName: *clusterName
     interruptionQueueName: *clusterName
