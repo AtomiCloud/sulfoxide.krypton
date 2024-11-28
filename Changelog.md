@@ -1,3 +1,10 @@
+## [1.13.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.12.0...v1.13.0) (2024-11-28)
+
+
+### 🚀 New Features
+
+* limit to only 1c ([0e24605](https://github.com/AtomiCloud/sulfoxide.krypton/commit/0e24605c9ce550414ec3f63506df658ed4caa109))
+
 ## [1.12.0](https://github.com/AtomiCloud/sulfoxide.krypton/compare/v1.11.0...v1.12.0) (2024-11-18)
 
 
